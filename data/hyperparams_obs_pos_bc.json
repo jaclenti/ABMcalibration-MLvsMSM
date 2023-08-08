@@ -1,0 +1,1 @@
+{"model_name": "BC_observed_positive", "optimizer_name": "adam", "lr": 0.05, "minibatch_size": 0, "num_epochs": 200, "epsilon0": 0.25, "early_stopping_kw": {"patience": 20, "min_delta": 1e-05, "min_epochs": 20, "long_run_delta": 0.0001, "long_run_diff": 20, "long_run_patience": 10}, "sample_pairs": 50, "summarized": true}

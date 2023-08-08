@@ -1,0 +1,1 @@
+{"model_name": "BC_backfire", "optimizer_name": "RMSprop", "lr": 0.05, "minibatch_size": 0, "num_epochs": 800, "epsilon0_plus": 0.75, "patience": 20, "X0_lr_scale": 10, "min_delta": 1e-06, "min_epochs": 20, "sample_pairs": 50, "summarized": true}

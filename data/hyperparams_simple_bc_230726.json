@@ -1,0 +1,1 @@
+{"model_name": "simple_BC", "optimizer_name": "nadam", "lr": 0.1, "minibatch_size": 0, "num_epochs": 200, "epsilon0": 0.25, "patience": 20, "min_delta": 1e-06, "min_epochs": 20, "sample_pairs": 50, "summarized": true}

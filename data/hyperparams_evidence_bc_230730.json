@@ -1,0 +1,1 @@
+{"model_name": "BC_with_evidence", "optimizer_name": "RMSprop", "lr": 0.05, "minibatch_size": 0, "num_epochs": 200, "X0_lr_scale": 1, "epsilon0": 0.25, "patience": 20, "min_delta": 1e-06, "min_epochs": 20, "sample_pairs": 50, "summarized": true}
