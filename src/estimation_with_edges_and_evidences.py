@@ -3,7 +3,7 @@ import numpy as np
 import pandas as pd
 import sys
 import torch.nn as nn
-sys.path += ["/home/jacopo.lenti/Projects/learning-od-step-by-step/src"]
+sys.path += ["../src"]
 from scipy.special import expit as sigmoid
 from scipy.special import logit
 import simulator_BC_coo as sim_coo

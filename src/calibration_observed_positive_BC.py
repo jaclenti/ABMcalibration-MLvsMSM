@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
-sys.path += ["/home/jacopo.lenti/Projects/learning-od-step-by-step/src"]
+sys.path += ["../src"]
 import simulator_BC as sim_bc
 import estimation_epsilon_BC as est_bc
 import jax_estimation_BC as jest_bc

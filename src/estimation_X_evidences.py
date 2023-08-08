@@ -1,5 +1,5 @@
 import sys
-sys.path += ["/home/jacopo.lenti/Projects/learning-od-step-by-step/src"]
+sys.path += ["../src"]
 
 import simulator_BC_coo as sim_coo
 import estimation_with_edges_and_evidences as ewee

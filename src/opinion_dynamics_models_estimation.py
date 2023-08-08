@@ -14,7 +14,7 @@ import seaborn as sns
 from operator import itemgetter 
 
 import sys
-sys.path += ["/home/jacopo.lenti/Projects/learning-od-step-by-step/src"]
+sys.path += ["../src"]
 import simulator_opinion_dynamics as sod
 from initialize_model import EarlyStopping,RandomizeEpsilon,choose_optimizer
 from initialize_model import EarlyStopping,RandomizeEpsilon,choose_optimizer

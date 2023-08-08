@@ -1,6 +1,6 @@
 import numpy as np
 import sys
-sys.path += ["/home/jacopo.lenti/Projects/learning-od-step-by-step/src"]
+sys.path += ["../src"]
 import simulator_BC_coo as sim_coo
 from calibrator_blackit import Calibrator #i just commented few lines of code to remove the output print
 #from black_it.calibrator import Calibrator

@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
-sys.path += ["/home/jacopo.lenti/Projects/learning-od-step-by-step/src"]
+sys.path += ["../src"]
 from calibrator_blackit import Calibrator #i just commented few lines of code to remove the output print
 #from black_it.calibrator import Calibrator
 import pandas as pd
