@@ -56,7 +56,10 @@ class Simple_BC_Estimation(nn.Module):
 
 
 def gradient_descent_simple_BC(X, edges, rho, num_epochs, epsilon0 = 0.25, optimizer_name = "adam",
-                               lr = 0.05, hide_progress = True, minibatch_size = 0, early_stopping_kw = {"patience": 20, "min_delta": 1e-5, "min_epochs": 20, "long_run_delta": 1e-5, "long_run_diff":10, "long_run_patience": 5}):
+                               lr = 0.05, hide_progress = True, minibatch_size = 0, seed = None, early_stopping_kw = {"patience": 20, "min_delta": 1e-5, "min_epochs": 20, "long_run_delta": 1e-5, "long_run_diff":10, "long_run_patience": 5}):
+    if seed is not None:
+        np.random.seed(seed)
+    
     u,v,s,t = uvst = sod.convert_edges_uvst(edges)
     
     T,N = X.shape
@@ -165,9 +168,12 @@ class BC_Observe_positive_Estimation(nn.Module):
 
 def gradient_descent_BC_observe_positive(X, edges, rho, num_epochs, sample_pairs = 50,
                                          epsilon0 = 0.25, optimizer_name = "adam",
-                                         lr = 0.05, hide_progress = True, minibatch_size = 0,
+                                         lr = 0.05, hide_progress = True, minibatch_size = 0, seed = None,
                                          early_stopping_kw = {"patience": 20, "min_delta": 1e-5, "min_epochs": 20, "long_run_delta": 1e-5, "long_run_diff":10, "long_run_patience": 5}
                                         ):
+    if seed is not None:
+        np.random.seed(seed)
+    
     u,v,s,t = uvst = sod.convert_edges_uvst(edges)
     
     model_class = BC_Observe_positive_Estimation
@@ -419,8 +425,11 @@ class BC_evidence_X_Estimation(nn.Module):
 def gradient_descent_BC_evidence_X(X, edges, evidences, mu, rho, num_epochs,
                                    epsilon0 = 0.25, optimizer_name = "adam",
                                    lr = 0.05,  X0_lr_scale = 1,
-                                   hide_progress = True, minibatch_size = 0,
+                                   hide_progress = True, minibatch_size = 0, seed = None,
                                    early_stopping_kw = {"patience": 20, "min_delta": 1e-5, "min_epochs": 20, "long_run_delta": 1e-5, "long_run_diff":10, "long_run_patience": 5}):
+    if seed is not None:
+        np.random.seed(seed)
+    
     u,v,s,t = uvst = sod.convert_edges_uvst(edges)
     T,_ = X.shape
     
@@ -642,8 +651,11 @@ class BC_evidence_X_Estimation_bf(nn.Module):
 
     
 def gradient_descent_BC_evidence_X_backfire(X, edges, evidences, mu_plus, mu_minus, rho, num_epochs,
-                                   epsilon0_plus = 0.25, epsilon0_minus = 0.75, optimizer_name = "adam",
-                                   lr = 0.05, hide_progress = True, minibatch_size = 0, X0_lr_scale = 50,early_stopping_kw = {"patience": 20, "min_delta": 1e-5, "min_epochs": 20, "long_run_delta": 1e-5, "long_run_diff":10, "long_run_patience": 5}):
+                                            epsilon0_plus = 0.25, epsilon0_minus = 0.75, optimizer_name = "adam",
+                                            lr = 0.05, hide_progress = True, minibatch_size = 0, X0_lr_scale = 50, seed = None,
+                                            early_stopping_kw = {"patience": 20, "min_delta": 1e-5, "min_epochs": 20, "long_run_delta": 1e-5, "long_run_diff":10, "long_run_patience": 5}):
+    if seed is not None:
+        np.random.seed(seed)
     u,v, s_plus,s_minus, t = uvst = sod.convert_edges_uvst(edges)
     T,N = X.shape
     

@@ -29,8 +29,10 @@ class simulator_opinion_dynamics():
             self.X0 = torch.rand(N)
         
         
-    def simulate_trajectory(self, parameters):
+    def simulate_trajectory(self, parameters, seed = None):
         assert len(parameters) == self.num_parameters, f"Required {self.num_parameters} parameters"
+        if seed is not None:
+            np.random.seed(seed) 
         
         edges, X = torch.zeros(self.T-1, self.edge_per_t, self.dim_edges), torch.zeros(self.T, self.N)
         X[0] = self.X0
@@ -195,6 +197,7 @@ def kappa_from_epsilon(epsilon, diff_X, rho):
     
     return torch.sigmoid(rho * (epsilon - torch.abs(diff_X)))
     
+    
 ################### simulators ################
 
 
@@ -210,7 +213,7 @@ def BC_simulator_backfire(evidences = bernoulli_evidence):
     return simulator_opinion_dynamics(create_edges_BC_backfire, opinion_update_BC_backfire, bernoulli_evidence, num_parameters = 5, dim_edges = 4)
     
     
-def simulate_BC(N,T,edge_per_t,evidences_per_t,parameters, model = "simple"):
+def simulate_BC(N,T,edge_per_t,evidences_per_t,parameters, model = "simple", seed = None):
     
     if model == "simple":
         simulator = BC_simulator()
@@ -219,7 +222,7 @@ def simulate_BC(N,T,edge_per_t,evidences_per_t,parameters, model = "simple"):
         simulator = BC_simulator_backfire()
     simulator.initialize_simulator(N,T,edge_per_t, evidences_per_t)
     
-    X, edges, evidences = simulator.simulate_trajectory(parameters)
+    X, edges, evidences = simulator.simulate_trajectory(parameters, seed = seed)
     
     return X, edges, evidences
 

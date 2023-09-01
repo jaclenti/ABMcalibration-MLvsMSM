@@ -1,0 +1,15 @@
+black-it @ git+https://github.com/bancaditalia/black-it.git@8aff1e579587bc9cebf868538aa24653ae092ae3
+latex==0.7.0
+matplotlib==3.5.2
+numpy==1.23.5
+optax==0.1.4
+pandas==1.4.4
+pyarrow==12.0.1
+pytorch-lightning==1.6.5
+scipy==1.9.3
+seaborn==0.12.2
+timer==0.2.2
+torch==1.13.0
+torch-geometric==2.3.1
+torcheval==0.0.6
+torchmetrics==0.11.0
