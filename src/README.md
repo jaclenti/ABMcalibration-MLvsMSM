@@ -4,6 +4,8 @@
 
 - msm_first_moments is not used directly in the notebooks, but it contains other distance measure that could be used with the MSM 
 
+- calibrator_blackit.py is obtained from to blackit (https://github.com/bancaditalia/black-it)
+
 - initialize_model.py and opinion_dynamics_models_estimation.py are used for ML estimation
 
 - repeat_function contain methods for efficiently repeating the experiments
